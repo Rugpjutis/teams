@@ -48,7 +48,7 @@ abstract class Team extends Model
 	public function users(): BelongsToMany
 	{
 		return $this->belongsToMany(Teams::userModel(), Teams::membershipModel())
-			->withPivot('role')
+			->withPivot('role_id')
 			->withTimestamps()
 			->as('membership');
 	}
